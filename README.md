@@ -12,3 +12,8 @@ This Ruby script demonstrates how to create an array of hashes and iterate throu
 The script defines an array of hashes named `ghosts`. Each hash contains the following keys: `:name`, `:age`, `:loves`, and `:net_worth`.
 
 The script iterates through the `ghosts` array and constructs a sentence with the information from each hash, then prints this sentence to the console.
+
+# Dog Breeds and Sub-Breeds List
+This Ruby script retrieves a list of dog breeds and their sub-breeds from the dog.ceo API and prints them in a nicely formatted list.
+
+The script uses the `net/http` and `json` libraries to make a GET request to the dog.ceo API and parse the response.

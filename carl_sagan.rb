@@ -35,3 +35,26 @@ ghosts.each do |ghost|
   ghost_info += "has #{'%.2f' % ghost[:net_worth]} dollars in the bank."
   puts ghost_info
 end
+
+#  3) Write a script that uses the JSON provided by the dog.ceo API to print out a nicely formatted list of dog breeds and sub-breeds.
+require 'net/http'
+require 'json'
+
+url = 'https://dog.ceo/api/breeds/list/all'
+uri = URI(url)
+response = Net::HTTP.get(uri)
+dog_breeds = JSON.parse(response)
+
+# Iterate over each key-value pair in the hash
+dog_breeds['message'].each do |breed, sub_breeds|
+  # Print the main breed with an asterisk
+  puts "* #{breed}"
+
+  # If there are sub-breeds, iterate over them and print with indentation
+  if sub_breeds.any?
+    sub_breeds.each do |sub_breed|
+      puts "  * #{sub_breed}"
+    end
+  end
+end
+
