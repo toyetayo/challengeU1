@@ -17,3 +17,13 @@ The script iterates through the `ghosts` array and constructs a sentence with th
 This Ruby script retrieves a list of dog breeds and their sub-breeds from the dog.ceo API and prints them in a nicely formatted list.
 
 The script uses the `net/http` and `json` libraries to make a GET request to the dog.ceo API and parse the response.
+
+# Tree Count Analysis: Impact of Emerald Ash Borer
+
+This Ruby script analyzes a dataset from the city's open data portal to determine the number of Ash trees. This is important to understand the potential impact of the Emerald Ash Borer, a pest that threatens Ash trees.
+
+
+The dataset used in this script is available at: `https://data.winnipeg.ca/resource/d3jk-hb6j.json?$limit=306000`
+
+
+The script fetches the data from the provided URL, parses the JSON response, and counts the number of Ash trees in the dataset.

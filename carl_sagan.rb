@@ -58,3 +58,36 @@ dog_breeds['message'].each do |breed, sub_breeds|
   end
 end
 
+# 4) Using data from the city's open data set figure out how many of our trees may die now that the Emerald Ash Borer has been found here. In other words, how many Ash trees do we have in the city?
+require 'net/http'
+require 'json'
+
+# URL of the tree dataset
+url = 'https://data.winnipeg.ca/resource/d3jk-hb6j.json?$limit=306000'
+
+# Function to fetch and parse JSON data
+def fetch_and_parse_data(url)
+  uri = URI(url)
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Function to count Ash trees
+def count_ash_trees(data)
+  ash_count = 0
+  data.each do |tree|
+    if tree['common_name']&.downcase&.include?('ash')
+      ash_count += 1
+    end
+  end
+  ash_count
+end
+
+# Fetch and parse data
+tree_data = fetch_and_parse_data(url)
+
+# Count Ash trees
+ash_count = count_ash_trees(tree_data)
+
+puts "Number of Ash trees in the dataset: #{ash_count}"
+
