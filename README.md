@@ -1,4 +1,4 @@
-# ** Carl Sagan Ruby Script **
+ ***Carl Sagan Ruby Script***
 
 The script defines two main data structures:
 
@@ -6,7 +6,7 @@ The script defines two main data structures:
 2. An array `sagan` containing various elements, including hashes and a string.
 
 
-# ** Ghosts Ruby Script **
+ ***Ghosts Ruby Script***
 This Ruby script demonstrates how to create an array of hashes and iterate through each hash to print specific details. The script provides information about four different "ghosts", including their names, ages, interests, and net worth.
 
 The script defines an array of hashes named `ghosts`. Each hash contains the following keys: `:name`, `:age`, `:loves`, and `:net_worth`.
