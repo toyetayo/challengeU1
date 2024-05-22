@@ -7,19 +7,19 @@
 #1. Copy and past the following Ruby code into a file called carl_sagan.rb and follow the self-contained instructions.
 
 carl  = {
-          :toast => 'cosmos',
-          :punctuation => [ ',', '.', '?' ],
-          :words => [ 'know', 'for', 'we']
-        }
+  :toast => 'cosmos',
+  :punctuation => [ ',', '.', '?' ],
+  :words => [ 'know', 'for', 'we']
+}
 
 sagan = [
-          { :are => 'are', 'A' => 'a' },
-          { 'waaaaaay' => 'way', :th3 => 'the' },
-          'itself',
-          { 2 => ['to']}
-        ]
+  { :are => 'are', 'A' => 'a' },
+  { 'waaaaaay' => 'way', :th3 => 'the' },
+  'itself',
+  { 2 => ['to']}
+]
 
-puts "#{carl[:words][2].capitalize} #{sagan[0][:are]} #{sagan[0]['A']} #{sagan[1]['waaaaaay']} #{carl[:words][1]} #{sagan[1][:th3]} #{carl[:toast]} #{sagan[3][2][0]} #{carl[:words][0]} #{sagan[2]}#{carl[:punctuation
+puts "#{carl[:words][2].capitalize} #{sagan[0][:are]} #{sagan[0]['A']} #{sagan[1]['waaaaaay']} #{carl[:words][1]} #{sagan[1][:th3]} #{carl[:toast]} #{sagan[3][2][0]} #{carl[:words][0]} #{sagan[2]}."
 
 # 2) Create an array of hashes named ‘ghosts’ to hold the following information:
 ghosts = [
@@ -36,6 +36,7 @@ ghosts.each do |ghost|
   puts ghost_info
 end
 
+
 #  3) Write a script that uses the JSON provided by the dog.ceo API to print out a nicely formatted list of dog breeds and sub-breeds.
 require 'net/http'
 require 'json'
@@ -45,18 +46,15 @@ uri = URI(url)
 response = Net::HTTP.get(uri)
 dog_breeds = JSON.parse(response)
 
-# Iterate over each key-value pair in the hash
 dog_breeds['message'].each do |breed, sub_breeds|
-  # Print the main breed with an asterisk
   puts "* #{breed}"
-
-  # If there are sub-breeds, iterate over them and print with indentation
   if sub_breeds.any?
     sub_breeds.each do |sub_breed|
       puts "  * #{sub_breed}"
     end
   end
 end
+
 
 # 4) Using data from the city's open data set figure out how many of our trees may die now that the Emerald Ash Borer has been found here. In other words, how many Ash trees do we have in the city?
 require 'net/http'
@@ -90,4 +88,3 @@ tree_data = fetch_and_parse_data(url)
 ash_count = count_ash_trees(tree_data)
 
 puts "Number of Ash trees in the dataset: #{ash_count}"
-
